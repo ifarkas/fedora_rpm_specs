@@ -76,7 +76,7 @@ cp -a ./%{gem_dir}/* %{buildroot}%{gem_dir}/
 
 # Removing file which is not under source control. For further details check out:
 # https://github.com/plataformatec/simple_form/issues/673
-%{__rm} %{buildroot}%{gem_instdir}/test/form_builder/general_test.rb.orig
+rm %{buildroot}%{gem_instdir}/test/form_builder/general_test.rb.orig
 
 
 %check
@@ -98,7 +98,6 @@ find ./test -name *_test.rb | xargs testrb -Itest
 %doc %{gem_instdir}/MIT-LICENSE
 %doc %{gem_instdir}/README.md
 %exclude %{gem_cache}
-%exclude %{gem_instdir}/.yardoc/
 %{gem_spec}
 
 
